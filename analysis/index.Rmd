@@ -8,7 +8,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-Do you like teeth? You've come to the write place.
+Do you like teeth? You've come to the right place.
 
 
 
