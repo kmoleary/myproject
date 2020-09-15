@@ -1,0 +1,38 @@
+---
+title: "teeth"
+author: "Kelly O'Leary"
+date: "2020-09-15"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r import-teeth}
+teeth <- read.csv("data/teeth.csv", row.names = 1)
+head(teeth)
+```
+
+## Boxplots
+
+```{r boxplots_1}
+boxplot(len ~ dose, data = teeth)
+```
+
+```{r boxplots_2}
+boxplot(len ~ supp, data = teeth)
+```
+
+```{r bloxplots_3}
+boxplot(len ~ dose + supp, data = teeth)
+```
+
+## Permutations
+
+```{r permute}
+mean(teeth$len[teeth$supp == "OJ"]) - mean(teeth$len[teeth$supp == "VC"])
+supp_perm <- sample(teeth$supp)
+mean(teeth$len[supp_perm == "OJ"]) - mean(teeth$len[teeth$supp == "VC"])
+```
+
